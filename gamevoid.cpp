@@ -30,6 +30,7 @@ void fullscene()
 	{
 		cena1papeis.ativo = false;
 		cena1roubo.ativo = false;
+		cena1roubo.Roubar = false;
 
 		RoubarOuNao_Destroy();
 	}
@@ -44,17 +45,20 @@ void fullscene()
 	}
 	if (cena1decisaopapel.Para_Velha)
 	{
+		cena1papeis.papel_a4 = false;
 
 		QuemFicaComOsPapeis_Destroy();
 	}
 	if (cena1decisaopapel.Para_Biologo)
 	{
+		cena1papeis.papel_a4 = false;
 
 
 		QuemFicaComOsPapeis_Destroy();
 	}
 	if (cena1decisaopapel.Egoista)
 	{
+		cena1papeis.papel_a4 = false;
 
 
 		QuemFicaComOsPapeis_Destroy();

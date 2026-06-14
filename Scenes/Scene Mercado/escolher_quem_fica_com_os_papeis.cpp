@@ -7,14 +7,24 @@ Button* egoista = nullptr;
 SDL_Surface* escolha1surf_1_2;
 SDL_Texture* escolha1text_1_2;
 
-
 SDL_Surface* escolha2surf_1_2;
 SDL_Texture* escolha2text_1_2;
-
 
 SDL_Surface* escolha3surf_1_2;
 SDL_Texture* escolha3text_1_2;
 
+Button* b13 = nullptr;
+Button* b23 = nullptr;
+Button* b33 = nullptr;
+
+SDL_Surface* botao13surf;
+SDL_Texture* botao13text;
+
+SDL_Surface* botao23surf;
+SDL_Texture* botao23text;
+
+SDL_Surface* botao33surf;
+SDL_Texture* botao33text;
 
 void QuemFicaComOsPapeis_Init() {
 	if (para_a_velha != nullptr)
@@ -32,9 +42,22 @@ void QuemFicaComOsPapeis_Init() {
 	escolha3surf_1_2 = TTF_RenderText_Blended(font, "Egoísta       ", 0, color);
 	escolha3text_1_2 = SDL_CreateTextureFromSurface(renderer, escolha3surf_1_2);
 
+	botao13surf = TTF_RenderText_Blended(font, "   1   ", 0, color);
+	botao23surf = TTF_RenderText_Blended(font, "   2   ", 0, color);
+	botao33surf = TTF_RenderText_Blended(font, "   3   ", 0, color);
+
+	botao13text = SDL_CreateTextureFromSurface(renderer, botao13surf);
+	botao23text = SDL_CreateTextureFromSurface(renderer, botao23surf);
+	botao33text = SDL_CreateTextureFromSurface(renderer, botao33surf);
+
 	SDL_DestroySurface(escolha1surf_1_2);
 	SDL_DestroySurface(escolha2surf_1_2);
 	SDL_DestroySurface(escolha3surf_1_2);
+
+
+	SDL_DestroySurface(botao13surf);
+	SDL_DestroySurface(botao23surf);
+	SDL_DestroySurface(botao33surf);
 
 	para_a_velha = new Button(
 		resolution.x - resolution.x / 3,
@@ -42,24 +65,60 @@ void QuemFicaComOsPapeis_Init() {
 		350,
 		50,
 		buttontextures_1_2,
-		escolha1text_1_2
+		escolha1text_1_2,
+		CHOICEBUTTON
 	);
+
+	b13 = new Button(
+		resolution.x - resolution.x / 3 - 60,
+		resolution.y - resolution.y / 1.5,
+		50,
+		50,
+		buttontextures_1_2,
+		botao13text,
+		ENUMBUTTON
+	);
+
 	para_o_biologo = new Button(
 		resolution.x - resolution.x / 3,
-		resolution.y - resolution.y / 1.5 + 50,
+		resolution.y - resolution.y / 1.5 + 55,
 		350,
 		50,
 		buttontextures_1_2,
-		escolha2text_1_2
+		escolha2text_1_2,
+		CHOICEBUTTON
 	);
+
+	b23 = new Button(
+		resolution.x - resolution.x / 3 - 60,
+		resolution.y - resolution.y / 1.5 + 55,
+		50,
+		50,
+		buttontextures_1_2,
+		botao23text,
+		ENUMBUTTON
+	);
+
 	egoista = new Button(
 		resolution.x - resolution.x / 3,
-		resolution.y - resolution.y / 1.5 + 100,
+		resolution.y - resolution.y / 1.5 + 110,
 		350,
 		50,
 		buttontextures_1_2,
-		escolha3text_1_2
+		escolha3text_1_2,
+		CHOICEBUTTON
 	);
+
+	b33 = new Button(
+		resolution.x - resolution.x / 3 - 60,
+		resolution.y - resolution.y / 1.5 + 110,
+		50,
+		50,
+		buttontextures_1_2,
+		botao33text,
+		ENUMBUTTON
+	);
+
 }
 
 void QuemFicaComOsPapeis_Update()
@@ -67,6 +126,10 @@ void QuemFicaComOsPapeis_Update()
 	para_a_velha->render(renderer);
 	para_o_biologo->render(renderer);
 	egoista->render(renderer);
+
+	b13->render(renderer);
+	b23->render(renderer);
+	b33->render(renderer);
 
 	if (hasEvent && keyb.type == SDL_EVENT_KEY_DOWN && !keyb.key.repeat)
 	{
@@ -120,4 +183,20 @@ void QuemFicaComOsPapeis_Destroy()
 	escolha1text_1_2 = nullptr;
 	escolha2text_1_2 = nullptr;
 	escolha3text_1_2 = nullptr;
+
+	delete b13;
+	delete b23;
+	delete b33;
+
+	b13 = nullptr;
+	b23 = nullptr;
+	b33 = nullptr;
+
+	SDL_DestroyTexture(botao13text);
+	SDL_DestroyTexture(botao23text);
+	SDL_DestroyTexture(botao33text);
+
+	botao13text = nullptr;
+	botao23text = nullptr;
+	botao33text = nullptr;
 }

@@ -3,6 +3,16 @@
 Button* roubar = nullptr;
 Button* nao_sou_assim = nullptr;
 
+Button* b14 = nullptr;
+Button* b24 = nullptr;
+
+
+SDL_Surface* botao14surf;
+SDL_Texture* botao14text;
+
+SDL_Surface* botao24surf;
+SDL_Texture* botao24text;
+
 SDL_Surface* escolha1surf_1_1;
 SDL_Texture* escolha1text_1_1;
 
@@ -27,6 +37,14 @@ void RoubarOuNao_Init() {
 	SDL_DestroySurface(escolha1surf_1_1);
 	SDL_DestroySurface(escolha2surf_1_1);
 
+	botao14surf = TTF_RenderText_Blended(font, "   1   ", 0, color);
+	botao24surf = TTF_RenderText_Blended(font, "   2   ", 0, color);
+
+	botao14text = SDL_CreateTextureFromSurface(renderer, botao14surf);
+	botao24text = SDL_CreateTextureFromSurface(renderer, botao24surf);
+
+	SDL_DestroySurface(botao14surf);
+	SDL_DestroySurface(botao24surf);
 
 
 	roubar = new Button(
@@ -35,22 +53,49 @@ void RoubarOuNao_Init() {
 		350,
 		50,
 		buttontextures_1_1,
-		escolha1text_1_1
+		escolha1text_1_1,
+		CHOICEBUTTON
 	);
+
+	b14 = new Button(
+		resolution.x - resolution.x / 3 - 60,
+		resolution.y - resolution.y / 1.5,
+		50,
+		50,
+		buttontextures_1_1,
+		botao14text,
+		ENUMBUTTON
+	);
+
 	nao_sou_assim = new Button(
 		resolution.x - resolution.x / 3,
-		resolution.y - resolution.y / 1.5 + 50,
+		resolution.y - resolution.y / 1.5 + 55,
 		350,
 		50,
 		buttontextures_1_1,
-		escolha2text_1_1
+		escolha2text_1_1,
+		CHOICEBUTTON
 	);
+
+	b24 = new Button(
+		resolution.x - resolution.x / 3 - 60,
+		resolution.y - resolution.y / 1.5 + 55,
+		50,
+		50,
+		buttontextures_1_1,
+		botao24text,
+		ENUMBUTTON
+	);
+
 }
 
 void RoubarOuNao_Update()
 {
 	roubar->render(renderer);
 	nao_sou_assim->render(renderer);
+
+	b14->render(renderer);
+	b24->render(renderer);
 
 	if (hasEvent && keyb.type == SDL_EVENT_KEY_DOWN && !keyb.key.repeat)
 	{
@@ -90,4 +135,16 @@ void RoubarOuNao_Destroy()
 
 	escolha1text_1_1 = nullptr;
 	escolha2text_1_1 = nullptr;
+
+	delete b14;
+	delete b24;
+
+	b14 = nullptr;
+	b24 = nullptr;
+
+	SDL_DestroyTexture(botao14text);
+	SDL_DestroyTexture(botao24text);
+
+	botao14text = nullptr;
+	botao24text = nullptr;
 }
