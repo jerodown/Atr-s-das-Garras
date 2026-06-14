@@ -8,11 +8,10 @@
 
 #include "Assets/Button/buttonchoice.hpp"
 #include "Assets/Screen/screen.hpp"
-#include "Scenes/Scene Mercado/mercado_1_0.hpp"
-#include "Scenes/Scene Mercado/mercado_1_1.hpp"
-#include "Scenes/Scene Mercado/mercado_1_2.hpp"
-#include "Scenes/Scene Mercado/mercado_1_3.hpp"
-#include "Scenes/Scene Mercado/mercado_1_4.hpp"
+#include "Scenes/Scene Mercado/decidir_papeis.hpp"
+#include "Scenes/Scene Mercado/roubar_ou_nao.hpp"
+#include "Scenes/Scene Mercado/escolher_quem_fica_com_os_papeis.hpp"
+#include "Scenes/Scene Mercado/dar_papel_pro_biologo.hpp"
 #include "gamevoid.hpp"
 
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
@@ -56,68 +55,7 @@ SDL_AppResult SDL_AppIterate(void* appstate)
 
 	debug();
 
-		if (cena1roubo.ativo == false && cena1decisaopapel.ativo == false)
-		{
-			Mercado_1_0_Init();
-			Mercado_1_0_Update();
-
-		}
-		if (cena1papeis.papiro_egipcio)
-		{
-			cena1roubo.ativo = true;
-			Mercado_1_1_Init();
-			Mercado_1_1_Update();
-
-			Mercado_1_0_Destroy();
-		}
-		if (cena1roubo.NaoSouAssim)
-		{
-			cena1papeis.papiro_egipcio = false;
-			cena1roubo.ativo = false;
-			cena1roubo.NaoSouAssim = false;
-
-			Mercado_1_1_Destroy();
-		}
-		if (cena1roubo.Roubar)
-		{
-			cena1papeis.ativo = false;
-			cena1roubo.ativo = false;
-
-			Mercado_1_0_Destroy();
-			Mercado_1_1_Destroy();
-		}
-		if (cena1papeis.papel_a4)
-		{
-			cena1decisaopapel.ativo = true;
-
-			Mercado_1_2_Init();
-			Mercado_1_2_Update();
-
-			Mercado_1_0_Destroy();
-		}
-		if (cena1decisaopapel.Para_Velha)
-		{
-
-			Mercado_1_2_Destroy();
-		}
-		if (cena1decisaopapel.Para_Biologo)
-		{
-
-
-			Mercado_1_2_Destroy();
-		}
-		if (cena1decisaopapel.Egoista)
-		{
-
-
-			Mercado_1_2_Destroy();
-		}
-		if (cena1decisaopapel.Rasgar_Papel)
-		{
-
-
-			Mercado_1_2_Destroy();
-		}
+	fullscene();
 
 
 	SDL_RenderPresent(renderer);

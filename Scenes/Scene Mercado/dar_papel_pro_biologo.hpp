@@ -5,6 +5,6 @@
 #include "../../Assets/Button/buttonchoice.hpp"
 #include "../../Assets/Screen/screen.hpp"
 
-extern void Mercado_1_0_Init();
-extern void Mercado_1_0_Destroy();
-extern void Mercado_1_0_Update();
+extern void DarPapelProBiologo_Init();
+extern void DarPapelProBiologo_Destroy();
+extern void DarPapelProBiologo_Update();

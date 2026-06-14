@@ -5,6 +5,6 @@
 #include "../../Assets/Button/buttonchoice.hpp"
 #include "../../Assets/Screen/screen.hpp"
 
-extern void Mercado_1_2_Init();
-extern void Mercado_1_2_Destroy();
-extern void Mercado_1_2_Update();
+extern void QuemFicaComOsPapeis_Init();
+extern void QuemFicaComOsPapeis_Destroy();
+extern void QuemFicaComOsPapeis_Update();

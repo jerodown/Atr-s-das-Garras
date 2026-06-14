@@ -28,16 +28,14 @@ struct ParaVelha_ParaBiologo_Egoista_RasgarPapel
 	bool Para_Velha = false;
 	bool Para_Biologo = false;
 	bool Egoista = false;
-	bool Rasgar_Papel = false;
-
 };
 
-struct Choice_1d
+struct PerguntarSobre_Esconder_EntregarPapeis
 {
-	bool choice1_1d = false;
-	bool choice2_1d = false;
-	bool choice3_1d = false;
-	bool choice4_1d = false;
+	bool ativo = false;
+	bool perguntar_sobre = false;
+	bool esconder = false;
+	bool entregar_papeis = false;
 
 };
 
@@ -73,6 +71,8 @@ extern Papiro_PapelNormal_PapelReciclado cena1papeis;
 extern Roubar_NaoSouAssim cena1roubo;
 
 extern ParaVelha_ParaBiologo_Egoista_RasgarPapel cena1decisaopapel;
+
+extern PerguntarSobre_Esconder_EntregarPapeis cena1decisaopapelreciclado;
 
 extern SDL_Renderer* renderer;
 

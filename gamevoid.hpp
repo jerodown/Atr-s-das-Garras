@@ -6,8 +6,9 @@
 #include "include/conditions.hpp"
 #include "Assets/Button/buttonchoice.hpp"
 #include "Assets/Screen/screen.hpp"
-#include "Scenes/Scene Mercado/mercado_1_0.hpp"
-#include "Scenes/Scene Mercado/mercado_1_1.hpp"
-#include "Scenes/Scene Mercado/mercado_1_2.hpp"
-#include "Scenes/Scene Mercado/mercado_1_3.hpp"
-#include "Scenes/Scene Mercado/mercado_1_4.hpp"
+#include "Scenes/Scene Mercado/decidir_papeis.hpp"
+#include "Scenes/Scene Mercado/roubar_ou_nao.hpp"
+#include "Scenes/Scene Mercado/escolher_quem_fica_com_os_papeis.hpp"
+#include "Scenes/Scene Mercado/dar_papel_pro_biologo.hpp"
+
+extern void fullscene();

@@ -1,4 +1,4 @@
-#include "mercado_1_1.hpp"
+#include "roubar_ou_nao.hpp"
 
 Button* roubar = nullptr;
 Button* nao_sou_assim = nullptr;
@@ -11,7 +11,7 @@ SDL_Surface* escolha2surf_1_1;
 SDL_Texture* escolha2text_1_1;
 
 
-void Mercado_1_1_Init() {
+void RoubarOuNao_Init() {
 	if (roubar != nullptr)
 		return;
 
@@ -47,7 +47,7 @@ void Mercado_1_1_Init() {
 	);
 }
 
-void Mercado_1_1_Update()
+void RoubarOuNao_Update()
 {
 	roubar->render(renderer);
 	nao_sou_assim->render(renderer);
@@ -77,7 +77,7 @@ void Mercado_1_1_Update()
 	}
 }
 
-void Mercado_1_1_Destroy()
+void RoubarOuNao_Destroy()
 {
 	delete roubar;
 	delete nao_sou_assim;
@@ -85,8 +85,8 @@ void Mercado_1_1_Destroy()
 	roubar = nullptr;
 	nao_sou_assim = nullptr;
 
-	SDL_DestroyTexture (escolha1text_1_1);
-	SDL_DestroyTexture (escolha2text_1_1);
+	SDL_DestroyTexture(escolha1text_1_1);
+	SDL_DestroyTexture(escolha2text_1_1);
 
 	escolha1text_1_1 = nullptr;
 	escolha2text_1_1 = nullptr;

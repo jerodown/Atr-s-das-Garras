@@ -1,4 +1,4 @@
-#include "mercado_1_0.hpp"
+#include "decidir_papeis.hpp"
 
 Button* papiro = nullptr;
 Button* papel_a4 = nullptr;
@@ -14,7 +14,7 @@ SDL_Surface* escolha3surf;
 SDL_Texture* escolha3text;
 
 
-void Mercado_1_0_Init() {
+void DecidirPapeis_Init() {
 	if (papiro != nullptr)
 		return;
 
@@ -61,7 +61,7 @@ void Mercado_1_0_Init() {
 	);
 }
 
-void Mercado_1_0_Update()
+void DecidirPapeis_Update()
 {
 	papiro->render(renderer);
 	papel_a4->render(renderer);
@@ -101,7 +101,7 @@ void Mercado_1_0_Update()
 	}
 }
 
-void Mercado_1_0_Destroy()
+void DecidirPapeis_Destroy()
 {
 	delete papiro;
 	delete papel_a4;

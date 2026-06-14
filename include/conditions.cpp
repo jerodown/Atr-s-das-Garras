@@ -8,6 +8,8 @@ Roubar_NaoSouAssim cena1roubo;
 
 ParaVelha_ParaBiologo_Egoista_RasgarPapel cena1decisaopapel;
 
+PerguntarSobre_Esconder_EntregarPapeis cena1decisaopapelreciclado;
+
 SDL_Event* event;
 
 SDL_Event keyb;

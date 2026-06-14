@@ -34,21 +34,6 @@
     <Filter Include="Arquivos de Cabeçalho\Scenes\Scene Mercado">
       <UniqueIdentifier>{7bb7e694-fee1-4d61-9383-d251e9ca3de3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Scenes\Scene Mercado\0">
-      <UniqueIdentifier>{7e399792-f221-44e1-97c3-9789eb0a7d1c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Scenes\Scene Mercado\1">
-      <UniqueIdentifier>{ec96f5bd-4d9f-459c-a488-0a3de0101685}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Scenes\Scene Mercado\2">
-      <UniqueIdentifier>{6cb95bf1-a39b-424e-9b33-fdba7b01cc64}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Scenes\Scene Mercado\3">
-      <UniqueIdentifier>{a5cf189d-b2e5-4a81-9ddc-be2ab7e1f854}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Scenes\Scene Mercado\4">
-      <UniqueIdentifier>{b9c8c08d-d06c-4db4-a054-43d53056cb4c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Arquivos de Cabeçalho\Full Scene">
       <UniqueIdentifier>{ccc1c98d-479b-4bff-901d-c74d164556d4}</UniqueIdentifier>
     </Filter>
@@ -66,23 +51,20 @@
     <ClCompile Include="include\conditions.cpp">
       <Filter>Arquivos de Cabeçalho\Include</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\Scene Mercado\mercado_1_0.cpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\0</Filter>
-    </ClCompile>
-    <ClCompile Include="Scenes\Scene Mercado\mercado_1_1.cpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\1</Filter>
-    </ClCompile>
-    <ClCompile Include="Scenes\Scene Mercado\mercado_1_2.cpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\2</Filter>
-    </ClCompile>
-    <ClCompile Include="Scenes\Scene Mercado\mercado_1_3.cpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\3</Filter>
-    </ClCompile>
-    <ClCompile Include="Scenes\Scene Mercado\mercado_1_4.cpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\4</Filter>
-    </ClCompile>
     <ClCompile Include="gamevoid.cpp">
       <Filter>Arquivos de Cabeçalho\Full Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\Scene Mercado\dar_papel_pro_biologo.cpp">
+      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\Scene Mercado\decidir_papeis.cpp">
+      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\Scene Mercado\escolher_quem_fica_com_os_papeis.cpp">
+      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\Scene Mercado\roubar_ou_nao.cpp">
+      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,23 +77,20 @@
     <ClInclude Include="include\conditions.hpp">
       <Filter>Arquivos de Cabeçalho\Include</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\Scene Mercado\mercado_1_0.hpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\0</Filter>
-    </ClInclude>
-    <ClInclude Include="Scenes\Scene Mercado\mercado_1_1.hpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\1</Filter>
-    </ClInclude>
-    <ClInclude Include="Scenes\Scene Mercado\mercado_1_2.hpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\2</Filter>
-    </ClInclude>
-    <ClInclude Include="Scenes\Scene Mercado\mercado_1_3.hpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\3</Filter>
-    </ClInclude>
-    <ClInclude Include="Scenes\Scene Mercado\mercado_1_4.hpp">
-      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado\4</Filter>
-    </ClInclude>
     <ClInclude Include="gamevoid.hpp">
       <Filter>Arquivos de Cabeçalho\Full Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\Scene Mercado\dar_papel_pro_biologo.hpp">
+      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\Scene Mercado\decidir_papeis.hpp">
+      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\Scene Mercado\escolher_quem_fica_com_os_papeis.hpp">
+      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\Scene Mercado\roubar_ou_nao.hpp">
+      <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
