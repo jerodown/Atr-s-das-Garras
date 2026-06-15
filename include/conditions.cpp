@@ -2,6 +2,8 @@
 
 SDL_Renderer* renderer = nullptr;
 
+Estado estado;
+
 Papiro_PapelNormal_PapelReciclado cena1papeis;
 
 Roubar_NaoSouAssim cena1roubo;
@@ -16,6 +18,7 @@ SDL_Event keyb;
 bool hasEvent = false;
 
 SDL_Color color = { 0, 0, 0, 255 };
+
 
 void debug(){
 	hasEvent = true;

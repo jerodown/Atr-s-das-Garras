@@ -66,6 +66,9 @@
     <ClCompile Include="Scenes\Scene Mercado\roubar_ou_nao.cpp">
       <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
     </ClCompile>
+    <ClCompile Include="Scenes\estado.cpp">
+      <Filter>Arquivos de Cabeçalho\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assets\Screen\screen.hpp">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="Scenes\Scene Mercado\roubar_ou_nao.hpp">
       <Filter>Arquivos de Cabeçalho\Scenes\Scene Mercado</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\estado.hpp">
+      <Filter>Arquivos de Cabeçalho\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,7 @@
 #include "Scenes/Scene Mercado/escolher_quem_fica_com_os_papeis.hpp"
 #include "Scenes/Scene Mercado/dar_papel_pro_biologo.hpp"
 #include "gamevoid.hpp"
+#include "Scenes/estado.hpp"
 
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
 {
@@ -53,10 +54,24 @@ SDL_AppResult SDL_AppIterate(void* appstate)
 	SDL_SetRenderDrawColor(renderer, 255, 100, 100, 255);
 	SDL_RenderClear(renderer);
 
+	if (estado.introducao)
+	{
+		Introducao_Init();
+		Introducao_Update();
+
+
+
+	}
+
+
 	debug();
 
-	fullscene();
 
+	if (estado.jogo)
+	{
+		Introducao_Destroy();
+		fullscene();
+	}
 
 	SDL_RenderPresent(renderer);
 

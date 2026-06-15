@@ -4,6 +4,13 @@
 #include <SDL3/SDL_image.h>
 
 
+struct Estado
+{
+	bool introducao = true;
+	bool pause = false;
+	bool jogo = false;
+};
+
 struct Papiro_PapelNormal_PapelReciclado
 {
 
@@ -73,6 +80,8 @@ extern Roubar_NaoSouAssim cena1roubo;
 extern ParaVelha_ParaBiologo_Egoista_RasgarPapel cena1decisaopapel;
 
 extern PerguntarSobre_Esconder_EntregarPapeis cena1decisaopapelreciclado;
+
+extern Estado estado;
 
 extern SDL_Renderer* renderer;
 

@@ -150,6 +150,7 @@
     <ClCompile Include="Atrás das Garras.cpp" />
     <ClCompile Include="gamevoid.cpp" />
     <ClCompile Include="include\conditions.cpp" />
+    <ClCompile Include="Scenes\estado.cpp" />
     <ClCompile Include="Scenes\Scene Mercado\dar_papel_pro_biologo.cpp" />
     <ClCompile Include="Scenes\Scene Mercado\decidir_papeis.cpp" />
     <ClCompile Include="Scenes\Scene Mercado\escolher_quem_fica_com_os_papeis.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Assets\Screen\screen.hpp" />
     <ClInclude Include="gamevoid.hpp" />
     <ClInclude Include="include\conditions.hpp" />
+    <ClInclude Include="Scenes\estado.hpp" />
     <ClInclude Include="Scenes\Scene Mercado\dar_papel_pro_biologo.hpp" />
     <ClInclude Include="Scenes\Scene Mercado\decidir_papeis.hpp" />
     <ClInclude Include="Scenes\Scene Mercado\escolher_quem_fica_com_os_papeis.hpp" />
