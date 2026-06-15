@@ -2,13 +2,16 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_ttf.h>
 #include <SDL3/SDL_image.h>
-
+#include <vector>
 
 struct Estado
 {
 	bool introducao = true;
 	bool pause = false;
 	bool jogo = false;
+	bool cutscene = false;
+	bool cutscene2 = false;
+	bool ativo = true;
 };
 
 struct Papiro_PapelNormal_PapelReciclado
@@ -94,3 +97,8 @@ extern bool hasEvent;
 extern SDL_Color color;
 
 extern void debug();
+
+extern std::vector<SDL_Texture*> cutsceneFrames;
+
+extern int frameatual;
+extern Uint64 ultimoframe;

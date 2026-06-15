@@ -24,3 +24,8 @@ void debug(){
 	hasEvent = true;
 
 }
+
+std::vector<SDL_Texture*> cutsceneFrames;
+
+int frameatual = 0;
+Uint64 ultimoframe = 0;

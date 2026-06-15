@@ -2,6 +2,8 @@
 
 void fullscene()
 {
+
+
 	if (cena1papeis.ativo)
 	{
 		DecidirPapeis_Init();
@@ -30,10 +32,21 @@ void fullscene()
 	{
 		cena1papeis.ativo = false;
 		cena1roubo.ativo = false;
-		cena1roubo.Roubar = false;
 
 		RoubarOuNao_Destroy();
+
+
+		estado.cutscene = true;
+		CutsceneRoubo_Init();
 	}
+	if (estado.cutscene)
+	{
+		cena1papeis.papiro_egipcio = false;
+		CutsceneRoubo_Update();
+	}
+
+
+
 	if (cena1papeis.papel_a4)
 	{
 		cena1decisaopapel.ativo = true;

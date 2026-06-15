@@ -57,30 +57,55 @@ SDL_AppResult SDL_AppIterate(void* appstate)
 	if (estado.introducao)
 	{
 		Introducao_Init();
-		Introducao_Update();
+		CutsceneRoubo_Destroy();
+		cena1decisaopapel.ativo = false;
+		cena1decisaopapel.Egoista = false;
+		cena1decisaopapel.Para_Biologo = false;
+		cena1decisaopapel.Para_Velha = false;
 
+		cena1decisaopapelreciclado.ativo = false;
+		cena1decisaopapelreciclado.entregar_papeis = false;
+		cena1decisaopapelreciclado.esconder = false;
+		cena1decisaopapelreciclado.perguntar_sobre = false;
 
+		cena1papeis.ativo = false;
+		cena1papeis.papel_a4 = false;
+		cena1papeis.papel_reciclado = false;
+		cena1papeis.papiro_egipcio = false;
 
+		cena1roubo.ativo = false;
+		cena1roubo.NaoSouAssim = false;
+		cena1roubo.Roubar = false;
+		estado.cutscene2 = true;
+		estado.cutscene = false;
 	}
-
-
+	if (estado.cutscene2 == true)
+	{
+		Introducao_Update();
+	}
 	debug();
 
 
 	if (estado.jogo)
 	{
+		estado.cutscene2 = false;
 		Introducao_Destroy();
 		fullscene();
 	}
 
 	SDL_RenderPresent(renderer);
 
+	if (!estado.ativo)
+	{
+		return SDL_APP_SUCCESS;
+	}
+
 	return SDL_APP_CONTINUE;
 }
 void SDL_AppQuit(void* appstate, SDL_AppResult result)
 {
 
-
+	Introducao_Destroy();
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	TTF_Quit();

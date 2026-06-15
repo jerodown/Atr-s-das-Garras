@@ -103,9 +103,9 @@ void RoubarOuNao_Update()
 		if (keyb.key.key == SDLK_1)
 		{
 			cena1roubo.Roubar = true;
+			cena1papeis.papiro_egipcio = false;
 			SDL_Log("Roubar");
 
-			cena1roubo.ativo = false;
 			hasEvent = true;
 			keyb = SDL_Event{};
 		}
@@ -115,7 +115,6 @@ void RoubarOuNao_Update()
 			cena1papeis.papiro_egipcio = false;
 			SDL_Log("Nao sou assim");
 
-			cena1roubo.ativo = false;
 			hasEvent = true;
 			keyb = SDL_Event{};
 		}
@@ -147,4 +146,82 @@ void RoubarOuNao_Destroy()
 
 	botao14text = nullptr;
 	botao24text = nullptr;
+}
+
+
+
+void CutsceneRoubo_Init()
+{
+	if (!cutsceneFrames.empty())
+		return;
+
+
+	frameatual = 0;
+	ultimoframe = SDL_GetTicks();
+
+	for (int i = 1; ; i++)
+	{
+		char caminho[125];
+		sprintf_s(caminho,
+			sizeof(caminho),
+			"C:/Atrás das Garras/Assets/Sprites/Video 1/roubocutscene (%d).png",
+			i);
+
+		SDL_Surface* surf = IMG_Load(caminho);
+
+		if (!surf)
+			break;
+
+		SDL_Texture* tex =
+			SDL_CreateTextureFromSurface(
+				renderer,
+				surf
+			);
+
+		cutsceneFrames.push_back(tex);
+
+		SDL_DestroySurface(surf);
+	}
+}
+void CutsceneRoubo_Update()
+{
+
+	Uint64 agora = SDL_GetTicks();
+
+	if (frameatual >= cutsceneFrames.size())
+	{
+		estado.cutscene = false;
+		cena1roubo.Roubar = false;
+		estado.introducao = true;
+		return;
+	}
+
+	SDL_FRect tela = {
+		0,
+		0,
+		(float)resolution.x,
+		(float)resolution.y
+	};
+
+	SDL_RenderTexture(
+		renderer,
+		cutsceneFrames[frameatual],
+		nullptr,
+		&tela
+	);
+
+	if (agora - ultimoframe >= 33)
+	{
+		frameatual++;
+		ultimoframe = agora;
+	}
+}
+void CutsceneRoubo_Destroy()
+{
+	for (SDL_Texture* tex : cutsceneFrames)
+	{
+		SDL_DestroyTexture(tex);
+	}
+
+	cutsceneFrames.clear();
 }
